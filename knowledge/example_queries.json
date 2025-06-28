@@ -1,0 +1,11 @@
+{
+  "查询本月每个汽车型号的销售量": "SELECT car_model, COUNT(*) as sales_count FROM sales WHERE EXTRACT(MONTH FROM sale_date) = EXTRACT(MONTH FROM CURRENT_DATE) AND EXTRACT(YEAR FROM sale_date) = EXTRACT(YEAR FROM CURRENT_DATE) GROUP BY car_model ORDER BY sales_count DESC LIMIT 10",
+  
+  "查询销售额最高的三个销售员": "SELECT s.sales_person_id, e.name, SUM(s.sale_amount) as total_sales FROM sales s JOIN employees e ON s.sales_person_id = e.employee_id GROUP BY s.sales_person_id, e.name ORDER BY total_sales DESC LIMIT 3",
+  
+  "查询过去7天内的日销售总额": "SELECT DATE(sale_date) as sale_day, SUM(sale_amount) as daily_total FROM sales WHERE sale_date >= CURRENT_DATE - INTERVAL '7 days' GROUP BY sale_day ORDER BY sale_day LIMIT 10",
+  
+  "统计各地区的客户数量": "SELECT region, COUNT(*) as customer_count FROM customers GROUP BY region ORDER BY customer_count DESC LIMIT 10",
+  
+  "查询平均订单金额超过1000的客户": "SELECT c.customer_id, c.name, AVG(s.sale_amount) as avg_order_amount FROM customers c JOIN sales s ON c.customer_id = s.customer_id GROUP BY c.customer_id, c.name HAVING AVG(s.sale_amount) > 1000 ORDER BY avg_order_amount DESC LIMIT 10"
+} 

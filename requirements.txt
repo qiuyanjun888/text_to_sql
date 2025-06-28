@@ -1,0 +1,43 @@
+# 基础依赖
+torch>=2.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+tqdm>=4.65.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# LLM相关
+vllm>=0.2.0
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain_core>=0.1.10
+transformers>=4.35.0
+sentence-transformers>=2.2.0
+accelerate>=0.23.0
+
+# 向量数据库
+faiss-cpu>=1.7.4
+chromadb>=0.4.18
+
+# 数据库
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.6
+pymysql>=1.1.0
+
+# Agent
+langchain-experimental>=0.0.42
+langgraph>=0.0.15
+
+# 前端
+gradio>=4.0.0
+
+# 监控
+mlflow>=2.8.0
+optuna>=3.3.0
+tensorboard>=2.14.0
+
+# 工具
+python-multipart>=0.0.6
+uvicorn>=0.23.0
+fastapi>=0.104.0
+httpx>=0.25.0 
